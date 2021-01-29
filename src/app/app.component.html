@@ -1,0 +1,111 @@
+ <div class ="container">
+<div class="content-top">
+ <div class="header" #header>
+    <img class="icon" src="../assets/logo.png" #icon>
+    <div class="style-items" #styleItems>
+    <ul>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Solutions</a></li>
+      <li><a href="#">Pricing</a></li>
+    </ul>
+    <div class="style-buttons">
+    <button class="btn">Login</button>
+    <button class="btn-inverted">Get Started</button>
+  </div>
+ </div>
+</div>
+ <div class="content">
+  <div class="content-left">
+    <h3>We make it Super Simple</h3>
+    <div class="underline-h3"></div>
+    <img class="imgHandshake" src="../assets/collect_img-video.png">
+    <img class="imgDots" src="../assets/accounting_dots.svg">
+  </div>
+  <div class="content-right">
+    <div class="align-cards">
+    <div class="card">
+      <div class="card-header">Eligibilty Calculator</div>
+      <div class="card-body">
+        <div class="slider">
+          <label for="monthIncm">Monthly Income</label>
+          <label for="monthIncm" id="dynamicLabel"><span>&#8377;</span> {{rangeValueIncome}}</label>
+          <input type="range" class="range" id="monthIncm" #rangeIncome  min="100000" max="300000" (change)="getSliderValue($event)" (input)="getSliderValue($event)">
+          <label></label>
+        </div>
+        <div class="slider">
+          <label for="monthExp">Monthly Expense</label>
+          <label for="monthExp"><span>&#8377;</span> {{rangeValueExpense}}</label>
+          <input type="range" class="range" id="monthExp" #rangeExpense min="0" max="300000" (change)="getSliderValue($event)" (input)="getSliderValue($event)">
+        </div>
+        <div class="drodpdown">
+          <label for="repayTenure">Repayment Tenure </label>
+          <select id="repayTenure">
+            <option *ngFor="let tenure of tenureList">
+             {{tenure}}
+            </option>
+          </select>
+        </div>
+        <div>
+          <label class="switch">
+            Do you have any existing loans?<input type="checkbox" class="toggle-btn">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div class="emiText">
+          <label for="emi">EMI of existing loan (optional)</label>
+          <i class="fas fa-rupee-sign"></i><input id="emi" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="card-body second">
+      <label>Loan Amount</label>
+      <p><span>&#8377; </span>1,00,000</p>
+      <label>Your EMI will be</label>
+      <p><span>&#8377; </span>15,000</p>
+      <button>GET MONEY</button>
+    </div>
+  </div>
+  <img src="../assets/accounting_dots.svg">
+</div>
+ </div>
+</div>
+ <div class="content-bottom">
+    <img class="bottom-background" src="../assets/sol_wave_bg.svg">
+    <div class="provisions">
+    <div class="provisions-card">
+      <img class="provisions-card-icon" src="../assets/Get Paid Instantly.png">
+      <div class="provisions-card-title">Quick cash disbursement</div>
+      <div class="provisions-card-body">Get terms loans that your business needs within 72 hrs</div>
+    </div>
+    <div class="provisions-card">
+      <img class="provisions-card-icon" src="../assets/Get Paid Instantly.png">
+      <div class="provisions-card-title">Quick cash disbursement</div>
+      <div class="provisions-card-body">Get terms loans that your business needs within 72 hrs</div>
+    </div>
+    <div class="provisions-card">
+      <img class="provisions-card-icon" src="../assets/Get Paid Instantly.png">
+      <div class="provisions-card-title">Quick cash disbursement</div>
+      <div class="provisions-card-body">Get terms loans that your business needs within 72 hrs</div>
+    </div>
+    </div>
+    <div class="provisions right">
+      <div class="provisions-card">
+        <img class="provisions-card-icon" src="../assets/Get Paid Instantly.png">
+        <div class="provisions-card-title">Quick cash disbursement</div>
+        <div class="provisions-card-body">Get terms loans that your business needs within 72 hrs</div>
+      </div>
+       <div class="provisions-card">
+       <img class="provisions-card-icon" src="../assets/Get Paid Instantly.png">
+       <div class="provisions-card-title">Quick cash disbursement</div>
+       <div class="provisions-card-body">Get terms loans that your business needs within 72 hrs</div>
+       </div>
+    </div>
+    <h4>Boost Your business with Open</h4>
+    <div class="underline"></div>
+    <p class="description-bottom">Get your hands on a term loan that’s crafted for your business</p>
+    <button class="content-bottom-button">
+      Get an Open Account
+      </button>
+  </div>
+</div>
+<router-outlet></router-outlet>
